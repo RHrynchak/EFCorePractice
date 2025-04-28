@@ -4,6 +4,7 @@ using EFCorePractice.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFCorePractice.Migrations
 {
     [DbContext(typeof(CinemaDbContext))]
-    partial class CinemaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250427111340_SeedData")]
+    partial class SeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -88,14 +91,14 @@ namespace EFCorePractice.Migrations
                         {
                             Id = 1,
                             Capacity = 100,
-                            Number = 1,
+                            Number = 0,
                             Type = "Standart"
                         },
                         new
                         {
                             Id = 2,
                             Capacity = 50,
-                            Number = 2,
+                            Number = 0,
                             Type = "VIP"
                         });
                 });
@@ -195,7 +198,7 @@ namespace EFCorePractice.Migrations
                         {
                             Id = 1,
                             DiscountId = 2,
-                            PurchaseDate = new DateTime(2025, 4, 28, 0, 0, 0, 0, DateTimeKind.Local),
+                            PurchaseDate = new DateTime(2025, 4, 27, 0, 0, 0, 0, DateTimeKind.Local),
                             TotalPrice = 300m,
                             UserId = 2
                         });
